@@ -22,7 +22,7 @@ export default function LineChart() {
 
     try {
       const response = await fetch(
-        `http://localhost:3030/cpu-usage?timePeriod=${timePeriod}&period=${period}&ipAddress=${ipAddress}`
+        `https://faddom-exercise-backend.onrender.com/cpu-usage?timePeriod=${timePeriod}&period=${period}&ipAddress=${ipAddress}`
       );
       const result = await response.json();
       console.log("Fetched data:", result); 
