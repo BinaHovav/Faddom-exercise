@@ -6,7 +6,8 @@ import { getInstanceIdByIP, getCpuUsage } from "./awsUtils.js";
 dotenv.config();
 
 const app = express();
-const port = 3030;
+const PORT = process.env.PORT || 5000;
+
 
 // Access AWS credentials from environment variables
 const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
@@ -66,6 +67,6 @@ app.get("/cpu-usage", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
